@@ -1,0 +1,100 @@
+TaxClass:
+    products:
+        Name: General Products
+        Description: Default class for all products
+        Default: 1
+    groceries:
+        Name: Groceries
+        Description: Food items and ingredients to be consumed away from place of sale
+    clothing:
+        Name: Clothing and Footware
+        Description: Wearable items
+        
+TaxRate:
+    nz15gst:
+        Country: NZ
+        Rate: 0.15
+        Name: GST
+        TaxClass: =>TaxClass.products
+    nz50gst:
+        Country: NZ
+        State: Wellington
+        PostalCode: 6012
+        Rate: 0.50
+        Name: TEST TAX
+        TaxClass: =>TaxClass.products   
+    us_alabama:
+        Country: US
+        State: Alabama
+        Rate: 0.04
+        TaxClass: =>TaxClass.products
+    us_alaska:
+        Country: US
+        State: Alaska
+        Rate: 0
+        TaxClass: =>TaxClass.products
+    us_arizona:
+        Country: US
+        State: Arizona
+        Rate: 0.066
+        TaxClass: =>TaxClass.products
+    us_arizona_groceries:
+        Country: US
+        State: Arizona
+        Rate: 0
+        TaxClass: =>TaxClass.groceries
+    us_arkansas:
+        Country: US
+        State: Arkansas
+        Rate: 0.06
+        TaxClass: =>TaxClass.products
+    us_california:
+        Country: US
+        State: California
+        Rate: 0.0725
+        TaxClass: =>TaxClass.products
+    us_colorado:
+        Country: US
+        State: Colorado
+        Rate: 0.029
+        TaxClass: =>TaxClass.products
+    us_connecticut:
+        Country: US
+        State: Connecticut
+        Rate: 0.0635
+        TaxClass: =>TaxClass.products
+    us_delaware:
+        Country: US
+        State: Delaware
+        Rate: 0
+        TaxClass: =>TaxClass.products
+    us_columbia:
+        Country: US
+        State: Columbia
+        Rate: 0.06
+        TaxClass: =>TaxClass.products
+    us_florida:
+        Country: US
+        State: Florida
+        Rate: 0.06
+        TaxClass: =>TaxClass.products
+    us_georgia:
+        Country: US
+        State: Georgia
+        Rate: 0.04
+        TaxClass: =>TaxClass.products
+    us_guam:
+        Country: US
+        State: Guam 
+        Rate: 0.04
+        TaxClass: =>TaxClass.products
+    us_hawaii:
+        Country: US
+        State: Hawaii
+        Rate: 0.04
+        TaxClass: =>TaxClass.products
+    us_idaho:
+        Country: US
+        State: Idaho
+        Rate: 0.06
+        TaxClass: =>TaxClass.products
