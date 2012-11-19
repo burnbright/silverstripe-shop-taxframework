@@ -18,10 +18,13 @@ class TaxedProductDecorator extends DataObjectDecorator{
 		}
 	}
 	
+	/*
+	 //this is done using the modifier
 	function updateSellingPrice(&$price){
 		if($taxclass = $this->owner->TaxClass()){
 			$price += $taxclass->getTax($price); //TODO: specify address
 		}
 	}
+	*/
 	
 }

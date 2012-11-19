@@ -10,10 +10,7 @@ class TaxFrameworkModifier extends OrderModifier{
 	function i18n_plural_name() {
 		return _t("TaxModifier.PLURAL", self::$plural_name);
 	}
-	
-	/**
-	 * TODO: reduce the number of database calls
-	 */
+
 	function value($incoming){
 		$order = $this->Order();
 		$value = 0;
@@ -25,6 +22,12 @@ class TaxFrameworkModifier extends OrderModifier{
 				if($taxclass && $rate = $taxclass->getRate($address)){
 					$value += $item->Total() * $rate; //tax is total x rate
 				}
+			}
+			//add tax to shipping via shipping framework modifier
+			if(ClassInfo::exists("ShippingFrameworkModifier") && $shippingmod = $order->getModifier('ShippingFrameworkModifier')){
+				$shippingclass = DataObject::get_one("TaxClass","LOWER(TRIM(\"Name\")) = 'shipping'");
+				$taxclass = ($shippingclass) ? $shippingclass : $defaultclass;
+				$value += $taxclass->getRate($address) * $shippingmod->Amount;
 			}
 		}
 		return $value;
