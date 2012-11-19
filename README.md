@@ -31,6 +31,12 @@ different tax rates for different kinds of products
 If you need some example tax classes and rates to populate your site for testing/development, 
 you can run the task: `yoursite.tld/dev/tasks/PopulateTaxClassesTask`
 
+### Shipping Tax
+
+If the ShippingFramework is installed also, tax will be applied to shipping. The default tax class
+will be used, unless there exists a tax class named 'shipping'. Using a 'shipping' tax class
+can enable different tax rates for shipping, or no tax at all.
+
 ## Further Documentation
 
 See the docs/en folder.
