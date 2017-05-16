@@ -12,7 +12,7 @@ class TaxedProductDecorator extends DataObjectDecorator{
 	
 	function updateCMSFields($fields){
 		if($taxclasses = DataObject::get("TaxClass","","\"Name\" ASC")){
-			$fields->addFieldsToTab("Root.Content.Pricing", array(
+			$fields->addFieldsToTab("Root.Pricing", array(
 				new DropdownField("TaxClass","Tax Class",$taxclasses->map('ID','Name'))	
 			));
 		}
